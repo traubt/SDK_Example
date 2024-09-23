@@ -57,6 +57,9 @@
             this.label14 = new System.Windows.Forms.Label();
             this.txtUnitP = new System.Windows.Forms.TextBox();
             this.btnSaveSett = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.txtNewCC = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button1
@@ -122,7 +125,7 @@
             // 
             // txtResult
             // 
-            this.txtResult.Location = new System.Drawing.Point(124, 403);
+            this.txtResult.Location = new System.Drawing.Point(144, 317);
             this.txtResult.Multiline = true;
             this.txtResult.Name = "txtResult";
             this.txtResult.ReadOnly = true;
@@ -159,7 +162,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(218, 384);
+            this.label5.Location = new System.Drawing.Point(238, 298);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(276, 13);
             this.label5.TabIndex = 12;
@@ -234,7 +237,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(461, 334);
+            this.button2.Location = new System.Drawing.Point(461, 416);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(132, 28);
             this.button2.TabIndex = 21;
@@ -244,7 +247,7 @@
             // 
             // txtCode
             // 
-            this.txtCode.Location = new System.Drawing.Point(221, 341);
+            this.txtCode.Location = new System.Drawing.Point(221, 423);
             this.txtCode.Name = "txtCode";
             this.txtCode.Size = new System.Drawing.Size(66, 20);
             this.txtCode.TabIndex = 22;
@@ -254,7 +257,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(224, 323);
+            this.label11.Location = new System.Drawing.Point(224, 405);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(55, 13);
             this.label11.TabIndex = 23;
@@ -263,7 +266,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(164, 323);
+            this.label12.Location = new System.Drawing.Point(164, 405);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(32, 13);
             this.label12.TabIndex = 25;
@@ -271,7 +274,7 @@
             // 
             // txtStore
             // 
-            this.txtStore.Location = new System.Drawing.Point(149, 341);
+            this.txtStore.Location = new System.Drawing.Point(149, 423);
             this.txtStore.Name = "txtStore";
             this.txtStore.Size = new System.Drawing.Size(66, 20);
             this.txtStore.TabIndex = 24;
@@ -282,7 +285,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(316, 323);
+            this.label13.Location = new System.Drawing.Point(316, 405);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(23, 13);
             this.label13.TabIndex = 27;
@@ -290,7 +293,7 @@
             // 
             // txtQty
             // 
-            this.txtQty.Location = new System.Drawing.Point(293, 341);
+            this.txtQty.Location = new System.Drawing.Point(293, 423);
             this.txtQty.Name = "txtQty";
             this.txtQty.Size = new System.Drawing.Size(66, 20);
             this.txtQty.TabIndex = 26;
@@ -300,7 +303,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(371, 323);
+            this.label14.Location = new System.Drawing.Point(371, 405);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(53, 13);
             this.label14.TabIndex = 29;
@@ -308,7 +311,7 @@
             // 
             // txtUnitP
             // 
-            this.txtUnitP.Location = new System.Drawing.Point(365, 341);
+            this.txtUnitP.Location = new System.Drawing.Point(365, 423);
             this.txtUnitP.Name = "txtUnitP";
             this.txtUnitP.Size = new System.Drawing.Size(66, 20);
             this.txtUnitP.TabIndex = 28;
@@ -325,11 +328,42 @@
             this.btnSaveSett.UseVisualStyleBackColor = true;
             this.btnSaveSett.Click += new System.EventHandler(this.btnSaveSett_Click);
             // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(461, 469);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(132, 28);
+            this.button4.TabIndex = 31;
+            this.button4.Text = "Create New Customer";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // txtNewCC
+            // 
+            this.txtNewCC.Location = new System.Drawing.Point(216, 477);
+            this.txtNewCC.Name = "txtNewCC";
+            this.txtNewCC.Size = new System.Drawing.Size(71, 20);
+            this.txtNewCC.TabIndex = 32;
+            this.txtNewCC.Text = "ACK001";
+            this.txtNewCC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(204, 458);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(104, 13);
+            this.label15.TabIndex = 33;
+            this.label15.Text = "New Customer Code";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(894, 505);
+            this.ClientSize = new System.Drawing.Size(894, 542);
+            this.Controls.Add(this.label15);
+            this.Controls.Add(this.txtNewCC);
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.btnSaveSett);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.txtUnitP);
@@ -397,5 +431,8 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox txtUnitP;
         private System.Windows.Forms.Button btnSaveSett;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.TextBox txtNewCC;
+        private System.Windows.Forms.Label label15;
     }
 }

@@ -110,5 +110,20 @@ namespace SDKSample
             Settings.Default.DataPath = txtDataPath.Text;
             MessageBox.Show("Saved");
         }
+
+        private void button4_Click(object sender, EventArgs e) // create new customer
+        {
+            string StrReturn = string.Empty;
+            StrReturn = Authenticate();
+            StrReturn = SDK.ImportCustomer(txtNewCC.Text.PadRight(6) +"|Van's Truck Hire|114 Smith Street|Sandon|2000|||011-7202000|011-7212000|Van|Y|00|1||Delivery no.1|Delivery no.2|Delivery no.3|Delivery no.4|Delivery no.5|N|10|N|1|Y||00|00|2000|Field 1|Field 2|Field 3|Field 4|Field 5|M|1|1|094003154|van@truck.com|Freight|Ship|TaxRef|Y|ContactDocs|EmailDocs|ContactStmt|EmailStmt|Y|Name|Surname|ID|BankAccHolderName|6|6|ThirdParty|Passport");
+            if (StrReturn.StartsWith("0"))
+            {
+                MessageBox.Show("Customer successfulyl Created");
+            }
+            else
+            {
+                MessageBox.Show(StrReturn);
+            }
+;        }
     }
 }
