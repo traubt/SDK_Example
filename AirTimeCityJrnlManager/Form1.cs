@@ -1,7 +1,15 @@
 ﻿using System;
+using System.Net.Http;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
+using AirTimeCityJrnlManager.Properties;
+using DocumentFormat.OpenXml.Presentation;
+using DocumentFormat.OpenXml.Spreadsheet;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using PasSDK;
-namespace AirTimeCityJrnlManager
+namespace SDKSample
 {
     public partial class Form1 : Form
     {
@@ -10,6 +18,9 @@ namespace AirTimeCityJrnlManager
         public Form1()
         {
             InitializeComponent();
+            txtLicense.Text = Settings.Default.SDKLicense;
+            txtSerial.Text = Settings.Default.AuthKey;
+            txtDataPath.Text = Settings.Default.DataPath;
         }
 
         private string Authenticate()
@@ -18,7 +29,8 @@ namespace AirTimeCityJrnlManager
             string strReturn = SDK.SetDataPath(txtDataPath.Text);
             return strReturn;
         }
-        private void button1_Click(object sender, EventArgs e)
+
+        private void button1_Click(object sender, EventArgs e) // test connection
         {
             SDK.SetLicense(txtLicense.Text, txtSerial.Text);
             string strReturn = SDK.SetDataPath(txtDataPath.Text);
@@ -35,7 +47,7 @@ namespace AirTimeCityJrnlManager
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e) // get inventory item
         {
             if (txtItemCode.Text.Length > 0)
             {
@@ -48,7 +60,7 @@ namespace AirTimeCityJrnlManager
             }
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e) // get customer
         {
             if (txtCustCode.Text.Length > 0)
             {
@@ -61,7 +73,7 @@ namespace AirTimeCityJrnlManager
             }
         }
 
-        private void button2_Click_1(object sender, EventArgs e)
+        private void button2_Click_1(object sender, EventArgs e) // create sales order
         {
             string StrReturn = string.Empty;
             StrReturn = Authenticate();
@@ -69,17 +81,18 @@ namespace AirTimeCityJrnlManager
             if (StrReturn.StartsWith("0"))
             {
                 SDK.OpenDocumentFiles();
-            } else
+            }
+            else
             {
                 MessageBox.Show("Error 1 " + StrReturn);
-               return;
+                return;
             }
-                StrReturn = SDK.DefineDocumentHeader("||Y|ACK001|05/08/2024||N|0|Message no.1|Message no.2|Message no.3|Delivery no.1|Delivery no.2|Delivery no.3|Delivery no.4|Delivery no.5||00||05/03/1999|011-7402156|Johnny|011-7402157|1");
-            
-                if (StrReturn.StartsWith("0"))
-                {
-                    StrReturn = SDK.DefineDocumentLine("0|1|1043|667||15|||ACC/LOC|Toc Deep Sleep|4|JHB|");
-                }
+            StrReturn = SDK.DefineDocumentHeader("||Y|ONL001|05/08/2024||N|0|Message no.1|Message no.2|Message no.3|Delivery no.1|Delivery no.2|Delivery no.3|Delivery no.4|Delivery no.5||00||05/03/1999|011-7402156|Johnny|011-7402157|1");
+
+            if (StrReturn.StartsWith("0"))
+            {
+                StrReturn = SDK.DefineDocumentLine($"0|{txtQty.Text.ToString()}|{txtUnitP.Text.ToString()}|||15|||{txtCode.Text.ToString()}|Toc Deep Sleep|4|{txtStore.Text.ToString()}|");
+            }
             else
             {
                 MessageBox.Show("Error 2 " + StrReturn);
@@ -88,6 +101,14 @@ namespace AirTimeCityJrnlManager
             StrReturn = SDK.ImportDocument(102);
             MessageBox.Show(StrReturn);
             SDK.CloseDocumentFiles();
+        }
+
+        private void btnSaveSett_Click(object sender, EventArgs e)
+        {
+            Settings.Default.SDKLicense = txtLicense.Text;
+            Settings.Default.AuthKey = txtSerial.Text;
+            Settings.Default.DataPath = txtDataPath.Text;
+            MessageBox.Show("Saved");
         }
     }
 }

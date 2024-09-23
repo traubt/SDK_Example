@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31613.86
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35219.272
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AirTimeCityJrnlManager", "AirTimeCityJrnlManager\AirTimeCityJrnlManager.csproj", "{FE5C08BC-F753-4B91-BBFF-FB78002A97F8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SDKSample", "AirTimeCityJrnlManager\SDKSample.csproj", "{FE5C08BC-F753-4B91-BBFF-FB78002A97F8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

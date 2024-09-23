@@ -22,5 +22,41 @@ namespace AirTimeCityJrnlManager.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string SDKLicense {
+            get {
+                return ((string)(this["SDKLicense"]));
+            }
+            set {
+                this["SDKLicense"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string AuthKey {
+            get {
+                return ((string)(this["AuthKey"]));
+            }
+            set {
+                this["AuthKey"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string DataPath {
+            get {
+                return ((string)(this["DataPath"]));
+            }
+            set {
+                this["DataPath"] = value;
+            }
+        }
     }
 }
