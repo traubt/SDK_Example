@@ -18,9 +18,9 @@ namespace SDKSample
         public Form1()
         {
             InitializeComponent();
-            txtLicense.Text = "DK191112764"; //Settings.Default.SDKLicense;
-            txtSerial.Text = "5032001"; // Settings.Default.AuthKey;
-            txtDataPath.Text = @"C:\Pastel19\CFAT";// Settings.Default.DataPath;
+            txtLicense.Text = Settings.Default.SDKLicense;
+            txtSerial.Text = Settings.Default.AuthKey;
+            txtDataPath.Text = Settings.Default.DataPath;
         }
 
         private string Authenticate()
@@ -94,7 +94,7 @@ namespace SDKSample
             if (StrReturn.StartsWith("0"))
             {
                 //StrReturn = SDK.DefineDocumentLine($"0|{txtQty.Text.ToString()}|{txtUnitP.Text.ToString()}|||15|||{txtCode.Text.ToString()}|Toc Deep Sleep|4|{txtStore.Text.ToString()}|");
-                StrReturn = SDK.DefineDocumentLine("0|1.0|1040|1800||15|||6743|Toc Deep Sleep|4|003|");
+                StrReturn = SDK.DefineDocumentLine("0|1|1043.478|1000||15|||6743|Toc Deep Sleep|4|006|");
                 //StrReturn = SDK.DefineDocumentLine("0|1|1391.304|1000||15|||CLR001|Cannalicious live resin disposable vape|4|006|");
             }
             else
@@ -102,7 +102,7 @@ namespace SDKSample
                 MessageBox.Show("Error 2 " + StrReturn);
                 return;
             }
-            StrReturn = SDK.ImportDocument(103);
+            StrReturn = SDK.ImportDocument(102);
             MessageBox.Show(StrReturn);
             SDK.CloseDocumentFiles();
         }
